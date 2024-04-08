@@ -1,0 +1,29 @@
+{%extends "Log_reg_temp.html"%} {%block title%}sign-up{%endblock%} {% block content %}
+<section>
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-8" style="padding: 0;margin: 0;">
+                <img src="{{url_for('static', filename='images/vot.jpg')}}" style="width:80%;">
+            </div>
+            <div class="col-md-5 col-lg-4 col-xl-3 offset-xl-1">
+                <form method='post'>
+                    <br><br>
+                    <div class="form-outline mb-4">
+                        <h2 class="text-muted">VOTER</h2> OR <a href="/admin_log">ADMIN</a>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form3Example3" name='adhar' class="form-control form-control-lg" placeholder="Enter registered Adhar Number" />
+                    </div>
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <input type="password" id="form3Example4" name='otp' class="form-control form-control-lg" placeholder="Enter OTP" />
+                    </div>
+                    <center>
+                        <button type="submit" class="btn btn-outline-primary btn-block" style="padding-left: 2.5rem; padding-right: 2.5rem;">Vote</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}

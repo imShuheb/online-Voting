@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <title>{% block title %}admin{% endblock %}</title>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" style="margin: 0;" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+
+    {% else %}
+
+    <div class="alert alert-success alter-dismissable fade show " style="margin: 0;" role="alert ">
+        {{ message }}
+        <button type="button " class="close " data-dismiss="alert ">
+            <span aria-hidden="true ">&times;</span>
+          </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+    <center>
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ffffff;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav ml-auto">
+                    <ol class="breadcrumb" style="padding: 6px;">
+                        <li class="breadcrumb-item active">home</li>
+                        <li class="breadcrumb-item"><a href="/result">Result</a></li>
+                        <li class="breadcrumb-item"><a href="/edit"> Edit</a></li>
+                        <li class="breadcrumb-item"><a href="/logout"> logout</a></li>
+                    </ol>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fulid">
+            <h2><b>Admin</b></h2>
+            <div class="col-md-2 col-lg-4 col-xl-5 offset-xl-1 mt-3">
+                <form method='post' enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text  " name="adhar" placeholder="Adhar No">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="qualify" placeholder="Qualification">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="phone" placeholder="Phone No">
+                    </div>
+                    <div class="form-group ">
+                        <textarea id="address" name="address" class="form-control" placeholder="Address" required="required" data-error="Please, leave us a message."></textarea>
+                    </div>
+                    <div class="form-group ">
+                        <input type="file" class="form-control-file " id="fileInput" name="cand_pic">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-primary btn-block" type="submit">Add candidit</button>
+                    </div>
+                </form>
+            </div>
+    </center>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{%extends "Log_reg_temp.html"%} {%block title%}sign-up{%endblock%} {% block content %}
+<style>
+    .pad {
+        padding: .1in;
+    }
+</style>
+
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-5 col-lg-4 col-xl-3 offset-xl-1 mt-5 pt-5">
+                <form method="post">
+                    <div class="form-group pad">
+                        <input class="form-control" type="text" name="name" placeholder="Name">
+                    </div>
+                    <div class="form-group pad">
+                        <input class="form-control" type="text  " name="adhar" placeholder="Adhar No">
+                    </div>
+
+                    <div class="form-group pad">
+                        <input class="form-control" type="email" name="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-group pad">
+                        <input class="form-control" type="text" name="phone" placeholder="Phone No">
+                    </div>
+
+                    <div class="form-group pad">
+                        <button class="btn btn-outline-primary btn-block" type="submit">Register</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}

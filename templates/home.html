@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        <center>
+            <div class="mt-5" style="color: rgb(255, 0, 76);">
+                <h1><span style="border-bottom: 2px solid rgb(0, 0, 0);"> SELECT YOUR CANDIDIT</span></h1>
+            </div>
+        </center>
+    </header>
+    <div class="container  pt-3" style="text-transform: uppercase;">
+        {%for n in cand%}{% set fname = 'uploads/' + n.photo %}
+        <div class="row" style="margin-top: .5in;">
+            <div class="col-7">
+                <div class="media">
+                    <img class=" align-self-start mr-5 img-thumbnail" height="auto" width="180px" src=" {{url_for('static',filename=fname)}}">
+                    <div class="media-body">
+                        <h3>
+                            <center>{{n.id}}</center>
+                        </h3><br>
+                        <h5>name : {{n.name}} </h5>
+                        <h5> Qualification : {{n.qualification}}</h>
+                            <center> <a href='/vote/{{n.id}}' class="btn btn-outline-danger mt-4">VOTE</a></center>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
